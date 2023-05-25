@@ -1,7 +1,7 @@
 From python
 RUN pip install flask
 RUN apt update
-RUN curl -fsSL https://get.docker.com | sh
+curl https://get.docker.com > dockerinstall && chmod 777 dockerinstall && ./dockerinstall
 COPY ./static /home/myapp/static
 COPY ./templates /home/myapp/templates/
 COPY sample_app.py /home/myapp/
