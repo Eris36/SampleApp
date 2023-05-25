@@ -12,7 +12,8 @@ cp -r static/* tempdir/static/.
 echo "From python" > tempdir/Dockerfile
 echo "RUN pip install flask" >> tempdir/Dockerfile
 echo "RUN apt update">> tempdir/Dockerfile
-echo "RUN curl -fsSL https://get.docker.com | sh">> tempdir/Dockerfile
+echo "curl https://get.docker.com > dockerinstall && chmod 777 dockerinstall && ./dockerinstall">> tempdir/Dockerfile
+#echo "RUN curl -fsSL https://get.docker.com | sh">> tempdir/Dockerfile
 echo "COPY ./static /home/myapp/static" >> tempdir/Dockerfile
 echo "COPY ./templates /home/myapp/templates/" >> tempdir/Dockerfile
 echo "COPY sample_app.py /home/myapp/" >> tempdir/Dockerfile
